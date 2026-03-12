@@ -120,3 +120,27 @@ void buscarPosicion(int posicion) {
         printf("Error al abrir el archivo!");
     }
 }
+
+void eliminarPosicion(int posicion) {
+    Empleado empleado;
+    FILE *archivo     = fopen("empleado.dat","r");
+    FILE *archivoTemp = fopen("empleado_temp.dat","w");
+    if (archivo !=  NULL && archivoTemp !=  NULL) {
+        int posicion_actual = 0;
+        while (ftell(archivo)) {
+            if (posicion_actual != posicion) {
+                fseek(archivoTemp,posicion_actual *sizeof (Empleado),SEEK_SET);
+                fread(&empleado,sizeof(Empleado),1,archivo);
+                fwrite(&empleado,sizeof(Empleado),1,archivoTemp);
+                posicion_actual += 1;
+            }
+        }
+        fflush(archivoTemp);
+        fclose(archivoTemp);
+        fclose(archivo);
+        remove("empleado.dat");
+        rename("empleado_temp.dat","empleado.dat");
+    } else {
+        printf("Error al abrir el o los archivos!");
+    }
+}
