@@ -1,3 +1,5 @@
+package data.base;
+
 public class Laptop extends Modelo {
 
    @Override

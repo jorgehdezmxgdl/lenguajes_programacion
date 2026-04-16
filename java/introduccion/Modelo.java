@@ -1,3 +1,5 @@
+package data.base;
+
 public class Modelo {
    // Atributos
    private String marca;
