@@ -7,4 +7,8 @@ public class Modelo {
    private int ram;
    private float hhd;
 
+   public String toString() {
+      return "Modelo";
+   }
+
 }
