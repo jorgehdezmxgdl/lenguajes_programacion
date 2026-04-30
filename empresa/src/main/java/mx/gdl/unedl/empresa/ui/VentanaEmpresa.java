@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
+import mx.gdl.unedl.empresa.util.Tiempo;
 
 /**
  *
@@ -23,6 +24,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
      */
     public VentanaEmpresa() {
         initComponents();
+        new Tiempo(this).start();
     }
 
     /**
@@ -326,7 +328,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JLabel lblTiempo;
+    public javax.swing.JLabel lblTiempo;
     private javax.swing.JMenu mniAbrir;
     private javax.swing.JMenuItem mniGuardar;
     private javax.swing.JTextArea txtEditor;

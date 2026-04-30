@@ -23,12 +23,13 @@ public class Tiempo extends Thread{
             try {
                 LocalTime tiempo = LocalTime.now();
                 DateTimeFormatter df =
-                    DateTimeFormatter.ofPattern("HH:mm:ss");
-                df.format(tiempo);
+                        DateTimeFormatter.ofPattern("HH:mm:ss");
+                this.editor.lblTiempo.
+                        setText(df.format(tiempo));
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 System.getLogger(Tiempo.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            }
+            }            
         }
     }
 }
