@@ -23,7 +23,7 @@ public class Tiempo extends Thread{
             try {
                 LocalTime tiempo = LocalTime.now();
                 DateTimeFormatter df =
-                        DateTimeFormatter.ofPattern("HH:mm:ss");
+                    DateTimeFormatter.ofPattern("HH:mm:ss");
                 df.format(tiempo);
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {

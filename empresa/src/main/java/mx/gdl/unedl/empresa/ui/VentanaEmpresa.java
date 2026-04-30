@@ -49,7 +49,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblTiempo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mniAbrir = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -114,8 +114,6 @@ public class VentanaEmpresa extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
 
-        jLabel3.setText("jLabel3");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,7 +124,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
                 .addGap(275, 275, 275)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(lblTiempo)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -136,7 +134,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(lblTiempo))
                 .addContainerGap())
         );
 
@@ -164,19 +162,23 @@ public class VentanaEmpresa extends javax.swing.JFrame {
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem6.setText("Cortar");
+        jMenuItem6.addActionListener(this::jMenuItem6ActionPerformed);
         jMenu2.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem7.setText("Copiar");
+        jMenuItem7.addActionListener(this::jMenuItem7ActionPerformed);
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem8.setText("Pegar");
+        jMenuItem8.addActionListener(this::jMenuItem8ActionPerformed);
         jMenu2.add(jMenuItem8);
         jMenu2.add(jSeparator5);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem5.setText("Seleccionar Todo");
+        jMenuItem5.addActionListener(this::jMenuItem5ActionPerformed);
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -278,13 +280,28 @@ public class VentanaEmpresa extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        txtEditor.cut();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        txtEditor.copy();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+       txtEditor.paste();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        txtEditor.selectAll();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
@@ -309,6 +326,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel lblTiempo;
     private javax.swing.JMenu mniAbrir;
     private javax.swing.JMenuItem mniGuardar;
     private javax.swing.JTextArea txtEditor;
